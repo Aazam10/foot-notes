@@ -1,0 +1,28 @@
+.note-card {
+  border-radius: 8px;
+  background-color: var(--notes-color);
+  width: 40%;
+  border: 1px transparent;
+  height: max-content;
+  padding: 1rem;
+
+  min-width: min-content;
+}
+
+.note-card-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note-icons-container {
+  display: flex;
+  margin-right: 1rem;
+  gap: 1rem;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.note-description {
+  word-break: break-all;
+  margin-bottom: 1rem;
+}
