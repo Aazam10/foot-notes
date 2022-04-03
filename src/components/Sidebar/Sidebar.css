@@ -1,0 +1,45 @@
+.notes-sidebar {
+  padding-left: 2rem;
+  width: 17rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: calc(100vh - 85px);
+}
+
+.list li {
+  padding-left: 0rem;
+}
+
+.note-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar {
+  border: 1px solid black;
+  background-color: var(--notes-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+}
+
+.signout {
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+.note-list:hover {
+  color: var(--notes-color);
+  font-weight: 800;
+}

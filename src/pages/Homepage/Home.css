@@ -1,0 +1,17 @@
+.main-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.notes-main-container {
+  width: 100%;
+  height: calc(100vh - 85px);
+  overflow-y: scroll;
+}
+
+.notes-card-container {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}

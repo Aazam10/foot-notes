@@ -1,0 +1,63 @@
+.note-form-container {
+  width: 40%;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+  padding: 1rem;
+
+  margin: 1rem auto;
+}
+.user-title-input {
+  width: 100%;
+  border: none;
+  height: 2rem;
+  font-size: 1.2rem;
+}
+
+.user-title-input:focus {
+  outline: none;
+}
+
+.user-description-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  height: 3rem;
+  resize: none;
+  margin-top: 1rem;
+  word-wrap: break-word;
+  font-size: 1.2rem;
+}
+
+.tools-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tools {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+.btn-note {
+  background-color: var(--white-color);
+  padding: 0.4rem;
+  border-radius: 4px;
+  color: var(--black-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.btn-note:hover {
+  background-color: var(--notes-color);
+}
+
+::placeholder {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
