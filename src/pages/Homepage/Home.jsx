@@ -1,9 +1,9 @@
 import "./Home.css";
-import { Navbar, Sidebar, NoteCard, NoteForm } from "../../components";
-import { useState } from "react";
+import { Navbar, Sidebar, NoteList, NoteForm } from "../../components";
+import { useNotes } from "../../context";
 
 const Home = () => {
-  const [showNoteForm, setShowNoteForm] = useState(false);
+  const { showNoteForm, setShowNoteForm } = useNotes();
   const addNotebtnHandler = () => {
     setShowNoteForm(true);
   };
@@ -20,10 +20,7 @@ const Home = () => {
           </div>
 
           {showNoteForm && <NoteForm />}
-          <div className="notes-card-container">
-            <NoteCard />
-            <NoteCard />
-          </div>
+          <NoteList />
         </div>
       </main>
     </div>

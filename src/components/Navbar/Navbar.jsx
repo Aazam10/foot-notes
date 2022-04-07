@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const { authState, authDispatch } = useAuth();
   const { token } = authState;
-  console.log(token);
+
   return (
     <header className="header">
       <div className="notes-logo ">FootNotes</div>

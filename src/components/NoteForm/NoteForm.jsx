@@ -2,14 +2,20 @@ import "./NoteForm.css";
 import { FaTags } from "react-icons/fa";
 import { MdColorLens } from "react-icons/md";
 import { useState } from "react";
-import { useAuth } from "../../context";
+import { useAuth, useNotes } from "../../context";
 
 import { addNote } from "../../Services";
 
 const NoteForm = () => {
   const { authState } = useAuth();
+  const {
+    noteState: { notes },
+    noteDispatch,
+    showNoteForm,
+    setShowNoteForm,
+  } = useNotes();
+
   const { token } = authState;
-  console.log(token);
 
   const [noteDetails, setNoteDetails] = useState({ title: "", content: "" });
 
@@ -20,11 +26,19 @@ const NoteForm = () => {
 
   const submitNotebtnHandler = async (event) => {
     event.preventDefault();
-
-    const response = await addNote(noteDetails, token);
-    console.log(response);
+    try {
+      const response = await addNote(noteDetails, token);
+      if (response.status === 201) {
+        noteDispatch({ type: "ADD_NOTE", payload: response.data.notes });
+        setShowNoteForm(false);
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      alert(error);
+    }
   };
-  console.log(noteDetails);
+
   return (
     <div className="form-open">
       <section className="note-form-container">
