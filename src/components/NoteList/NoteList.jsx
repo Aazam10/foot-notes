@@ -7,7 +7,7 @@ const NoteList = () => {
   return (
     <div className="notes-card-container">
       {notes.map((note) => {
-        return <NoteCard note={note} />;
+        return <NoteCard note={note} key={note._id} />;
       })}
     </div>
   );

@@ -12,6 +12,7 @@
 }
 
 .note-form-container {
+  position: relative;
   width: 40%;
   border-radius: 15px;
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
@@ -19,11 +20,21 @@
   background-color: white;
   margin: 1rem auto;
 }
+
+.cancel-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  right: 3%;
+  top: 3%;
+  cursor: pointer;
+}
+
 .user-title-input {
   width: 100%;
   border: none;
   height: 2rem;
   font-size: 1.2rem;
+  background-color: transparent;
 }
 
 .user-title-input:focus {
@@ -39,6 +50,7 @@
   margin-top: 1rem;
   word-wrap: break-word;
   font-size: 1.2rem;
+  background-color: transparent;
 }
 
 .tools-container {

@@ -1,6 +1,6 @@
 import axios from "axios";
 const deleteNote = (id, token) => {
-  return axios.delete(`/api/notes/${id}`, {
+  return axios.delete(`/api/trash/delete/${id}`, {
     headers: { authorization: token },
   });
 };

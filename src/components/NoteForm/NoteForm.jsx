@@ -1,6 +1,6 @@
 import "./NoteForm.css";
 import { FaTags } from "react-icons/fa";
-import { MdColorLens } from "react-icons/md";
+import { MdColorLens, MdCancel } from "react-icons/md";
 import { useState } from "react";
 import { useAuth, useNotes } from "../../context";
 
@@ -19,6 +19,8 @@ const NoteForm = () => {
 
   const [noteDetails, setNoteDetails] = useState({ title: "", content: "" });
 
+  const createdDate = new Date().toLocaleString();
+
   const noteDetailsChangeHandler = (event) => {
     const { name, value } = event.target;
     setNoteDetails({ ...noteDetails, [name]: value });
@@ -26,8 +28,12 @@ const NoteForm = () => {
 
   const submitNotebtnHandler = async (event) => {
     event.preventDefault();
+
     try {
-      const response = await addNote(noteDetails, token);
+      const response = await addNote(
+        { ...noteDetails, createdDate: createdDate },
+        token
+      );
       if (response.status === 201) {
         noteDispatch({ type: "ADD_NOTE", payload: response.data.notes });
         setShowNoteForm(false);
@@ -39,9 +45,14 @@ const NoteForm = () => {
     }
   };
 
+  const hideFormHandler = () => {
+    setShowNoteForm(false);
+  };
+
   return (
     <div className="form-open">
       <section className="note-form-container">
+        <MdCancel className="cancel-icon" onClick={hideFormHandler} />
         <form>
           <input
             type="text"
