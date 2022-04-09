@@ -3,6 +3,8 @@ import {
   deleteFromArchivesHandler,
   getAllArchivedNotesHandler,
   restoreFromArchivesHandler,
+  updateArchiveNoteHandler,
+  trashFromArchivesHandler,
 } from "./backend/controllers/ArchiveController";
 import {
   loginHandler,
@@ -18,9 +20,10 @@ import {
 import {
   getAllTrashedNotesHandler,
   moveToTrashHandler,
-  restoreFromTrashHandler,
   deleteFromTrashHandler,
+  restoreFromTrashHandler,
 } from "./backend/controllers/TrashController";
+
 import { users } from "./backend/db/users";
 
 export function makeServer({ environment = "development" } = {}) {
@@ -70,6 +73,8 @@ export function makeServer({ environment = "development" } = {}) {
         "/archives/delete/:noteId",
         deleteFromArchivesHandler.bind(this)
       );
+      this.post("/archives/:noteId", updateArchiveNoteHandler.bind(this));
+      this.post("/archives/trash/:noteId", trashFromArchivesHandler.bind(this));
 
       // trash routes (private)
       this.get("/trash", getAllTrashedNotesHandler.bind(this));

@@ -2,7 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
 import { FaTags } from "react-icons/fa";
-import { Home, Login, Trash } from "./pages";
+import { Home, Login, Trash, Archive } from "./pages";
 
 function App() {
   return (
@@ -12,6 +12,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/mock" element={<Mockman />} />
         <Route path="/trash" element={<Trash />} />
+        <Route path="/archive" element={<Archive />} />
       </Routes>
     </div>
   );
