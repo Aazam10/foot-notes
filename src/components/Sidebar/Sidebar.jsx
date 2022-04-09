@@ -30,7 +30,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link className="note-list" to="/">
+          <Link className="note-list" to="/trash">
             <FaTrashAlt />
             Deletes
           </Link>
