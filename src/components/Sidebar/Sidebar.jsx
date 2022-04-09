@@ -7,7 +7,12 @@ import {
   FaSignOutAlt,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNotes } from "../../context";
 const Sidebar = () => {
+  const {
+    noteState: { notes, archives, trash },
+  } = useNotes();
+  // console.log("notes", notes, "archives", archives, "trash", trash);
   return (
     <aside className="notes-sidebar">
       <ul className="list">
@@ -24,7 +29,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link className="note-list" to="/">
+          <Link className="note-list" to="/archive">
             <FaArchive />
             Archives
           </Link>

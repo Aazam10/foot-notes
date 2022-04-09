@@ -1,4 +1,4 @@
-const noteInitialState = { notes: [], trash: [] };
+const noteInitialState = { notes: [], trash: [], archives: [] };
 
 const noteReducer = (state, action) => {
   switch (action.type) {
@@ -21,6 +21,26 @@ const noteReducer = (state, action) => {
       return {
         ...state,
         trash: action.payload,
+      };
+
+    case "ADD_TO_ARCHIVE":
+      return {
+        ...state,
+        notes: action.payload.notes,
+        archives: action.payload.archives,
+      };
+
+    case "RESTORE_ARCHIVE":
+      return {
+        ...state,
+        notes: action.payload.notes,
+        archives: action.payload.archives,
+      };
+    case "DELETE_FROM_ARCHIVE":
+      return {
+        ...state,
+        trash: action.payload.trash,
+        archives: action.payload.archives,
       };
     default:
       return { ...state };
