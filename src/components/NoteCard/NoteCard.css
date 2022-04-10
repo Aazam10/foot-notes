@@ -3,9 +3,8 @@
   background-color: var(--notes-color);
   width: 40%;
   border: 1px transparent;
-  height: max-content;
   padding: 1rem;
-
+  position: relative;
   min-width: min-content;
 }
 
@@ -25,4 +24,13 @@
 .note-description {
   word-break: break-all;
   margin-bottom: 1rem;
+}
+
+.priority-tag {
+  position: absolute;
+  right: 0.3rem;
+  border-radius: 12px;
+  border: 1px solid gray;
+  top: 0.3rem;
+  padding: 0.3rem;
 }
