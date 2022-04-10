@@ -1,9 +1,10 @@
-import { Navbar, Sidebar, NoteCard } from "../../components";
+import { Navbar, Sidebar, NoteCard, NoteForm } from "../../components";
 import { useNotes } from "../../context";
 
 const Archive = () => {
   const {
     noteState: { archives },
+    showNoteForm,
   } = useNotes();
   return (
     <div>
@@ -20,6 +21,7 @@ const Archive = () => {
                 })
               : null}
           </div>
+          {showNoteForm && <NoteForm />}
         </div>
       </main>
     </div>

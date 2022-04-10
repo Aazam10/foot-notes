@@ -3,9 +3,10 @@ import { Navbar, Sidebar, NoteList, NoteForm } from "../../components";
 import { useNotes } from "../../context";
 
 const Home = () => {
-  const { showNoteForm, setShowNoteForm } = useNotes();
+  const { showNoteForm, setShowNoteForm, setIsEditing } = useNotes();
   const addNotebtnHandler = () => {
     setShowNoteForm(true);
+    setIsEditing(true);
   };
   return (
     <div>
