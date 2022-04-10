@@ -42,6 +42,14 @@ const noteReducer = (state, action) => {
         trash: action.payload.trash,
         archives: action.payload.archives,
       };
+
+    //TEMPORARY UPDATE ARCHIVE
+
+    case "UPDATE_ARCHIVE":
+      return {
+        ...state,
+        archives: action.payload,
+      };
     default:
       return { ...state };
   }
