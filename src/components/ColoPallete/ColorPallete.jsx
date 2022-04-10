@@ -6,15 +6,16 @@ const ColorPallete = ({ note, updateNoteHandler, setShowColorPallete }) => {
   console.log(updateNoteHandler);
   //   console.log(note);
   const colors = [
-    { id: 1, color: "green" },
-    { id: 2, color: "blue" },
-    { id: 3, color: "red" },
-    { id: 4, color: "yellow" },
+    { id: 1, color: "#fcecc9" },
+    { id: 2, color: "#becee4" },
+    { id: 3, color: "#72ddf7" },
+    { id: 4, color: "#dfb8ff" },
   ];
   console.log(setShowColorPallete);
   const colorButtonClickHandler = (color) => {
     if (isEditing) {
       setNoteDetails({ ...noteDetails, bgcolor: color });
+      setShowColorPallete(false);
     } else {
       updateNoteHandler({ ...note, bgcolor: color });
       setShowColorPallete(false);

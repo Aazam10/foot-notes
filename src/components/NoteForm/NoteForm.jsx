@@ -15,7 +15,6 @@ const NoteForm = () => {
   const {
     noteState: { notes, archives },
     noteDispatch,
-    showNoteForm,
     setShowNoteForm,
     noteDetails,
     setNoteDetails,
@@ -62,6 +61,7 @@ const NoteForm = () => {
         token,
         noteDispatch
       );
+      closeNoteForm();
     } else if (archiveExists) {
       editArchiveNoteFn(
         {
@@ -74,6 +74,7 @@ const NoteForm = () => {
         token,
         noteDispatch
       );
+      closeNoteForm();
     } else {
       if (noteDetails.title.trim() === "") {
         alert("title  should be added");
@@ -91,13 +92,18 @@ const NoteForm = () => {
         } catch (error) {
           alert(error);
         }
+        closeNoteForm();
       }
     }
-    closeNoteForm();
+    // closeNoteForm();
   };
   const priorityIconClickHandler = () => {
     setShowColorPallete(false);
     setShowPriority((prev) => !prev);
+  };
+  const colorPalleteIconClickHandler = () => {
+    setShowColorPallete((prev) => !prev);
+    setShowPriority(false);
   };
 
   return (
@@ -127,7 +133,7 @@ const NoteForm = () => {
             <div className="tools">
               <MdColorLens
                 className="icon"
-                onClick={() => setShowColorPallete((prev) => !prev)}
+                onClick={colorPalleteIconClickHandler}
               />
               <MdBarChart className="icon" onClick={priorityIconClickHandler} />
               <FaTags className="icon" />
@@ -142,8 +148,10 @@ const NoteForm = () => {
             </button>
           </div>
         </form>
-        {showColorPallete && <ColorPallete />}
-        {showPriority && <Priority />}
+        {showColorPallete && (
+          <ColorPallete setShowColorPallete={setShowColorPallete} />
+        )}
+        {showPriority && <Priority setShowPriority={setShowPriority} />}
       </section>
     </div>
   );

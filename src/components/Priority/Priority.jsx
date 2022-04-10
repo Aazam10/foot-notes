@@ -1,5 +1,4 @@
 import "./Priority.css";
-import { useState, useEffect } from "react";
 import { useNotes } from "../../context";
 
 const Priority = ({ note, updateNoteHandler, setShowPriority }) => {
@@ -9,6 +8,7 @@ const Priority = ({ note, updateNoteHandler, setShowPriority }) => {
     console.log(noteDetails, priority);
     if (isEditing) {
       setNoteDetails({ ...noteDetails, priority: priority });
+      setShowPriority(false);
     } else {
       updateNoteHandler({ ...note, priority: priority });
       setShowPriority(false);

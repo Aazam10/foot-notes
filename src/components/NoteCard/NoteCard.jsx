@@ -1,5 +1,5 @@
 import "./NoteCard.css";
-import { FaArchive, FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 import {
   MdColorLens,
   MdRestoreFromTrash,
@@ -9,7 +9,6 @@ import {
   MdEdit,
   MdBarChart,
 } from "react-icons/md";
-import axios from "axios";
 import { useAuth, useNotes } from "../../context";
 import { ColorPallete } from "../ColoPallete/ColorPallete";
 import { Priority } from "../Priority/Priority";
@@ -31,7 +30,7 @@ const NoteCard = ({ note }) => {
   } = useAuth();
 
   const {
-    noteState: { notes, trash, archives },
+    noteState: { trash, archives },
     noteDispatch,
     setNoteDetails,
     setShowNoteForm,
@@ -84,6 +83,10 @@ const NoteCard = ({ note }) => {
     setShowColorPallete(false);
     setShowPriority((prev) => !prev);
   };
+  const colorPalleteIconClickHandler = () => {
+    setShowColorPallete((prev) => !prev);
+    setShowPriority(false);
+  };
 
   return (
     <section className="note-card" style={{ backgroundColor: note.bgcolor }}>
@@ -115,7 +118,7 @@ const NoteCard = ({ note }) => {
               <MdBarChart className="icon" onClick={priorityIconClickHandler} />
               <MdColorLens
                 className="icon"
-                onClick={() => setShowColorPallete((prev) => !prev)}
+                onClick={colorPalleteIconClickHandler}
               />
               <MdUnarchive
                 className="icon"
@@ -132,7 +135,7 @@ const NoteCard = ({ note }) => {
               <MdBarChart className="icon" onClick={priorityIconClickHandler} />
               <MdColorLens
                 className="icon"
-                onClick={() => setShowColorPallete((prev) => !prev)}
+                onClick={colorPalleteIconClickHandler}
               />
               <MdArchive
                 className="icon"
