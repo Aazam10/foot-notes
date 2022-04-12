@@ -1,12 +1,21 @@
 import "./Home.css";
 import { Navbar, Sidebar, NoteList, NoteForm } from "../../components";
-import { useNotes } from "../../context";
+import { useAuth, useNotes } from "../../context";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { showNoteForm, setShowNoteForm, setIsEditing } = useNotes();
+  const {
+    authState: { token },
+  } = useAuth();
+  const navigate = useNavigate();
   const addNotebtnHandler = () => {
-    setShowNoteForm(true);
-    setIsEditing(true);
+    if (token) {
+      setShowNoteForm(true);
+      setIsEditing(true);
+    } else {
+      navigate("/login");
+    }
   };
   return (
     <div>

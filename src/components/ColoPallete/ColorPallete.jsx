@@ -2,8 +2,8 @@ import { useNotes } from "../../context";
 import "./ColorPallete.css";
 const ColorPallete = ({ note, updateNoteHandler, setShowColorPallete }) => {
   const { isEditing, noteDetails, setNoteDetails } = useNotes();
-  console.log(isEditing);
-  console.log(updateNoteHandler);
+  // console.log(isEditing);
+  // console.log(updateNoteHandler);
   //   console.log(note);
   const colors = [
     { id: 1, color: "#fcecc9" },
@@ -11,7 +11,7 @@ const ColorPallete = ({ note, updateNoteHandler, setShowColorPallete }) => {
     { id: 3, color: "#72ddf7" },
     { id: 4, color: "#dfb8ff" },
   ];
-  console.log(setShowColorPallete);
+  // console.log(setShowColorPallete);
   const colorButtonClickHandler = (color) => {
     if (isEditing) {
       setNoteDetails({ ...noteDetails, bgcolor: color });

@@ -1,5 +1,5 @@
 import "./NoteForm.css";
-import { FaTags } from "react-icons/fa";
+
 import { MdColorLens, MdCancel, MdBarChart } from "react-icons/md";
 
 import { useAuth, useNotes } from "../../context";
@@ -57,6 +57,7 @@ const NoteForm = () => {
           content: noteDetails.content.trim(),
           bgcolor: noteDetails.bgcolor,
           priority: noteDetails.priority,
+          tags: noteDetails.tags,
         },
         token,
         noteDispatch
@@ -70,6 +71,7 @@ const NoteForm = () => {
           content: noteDetails.content.trim(),
           bgcolor: noteDetails.bgcolor,
           priority: noteDetails.priority,
+          tags: noteDetails.tags,
         },
         token,
         noteDispatch
@@ -106,6 +108,23 @@ const NoteForm = () => {
     setShowPriority(false);
   };
 
+  const [tag, setTag] = useState("");
+
+  const tagchangeHandler = (e) => {
+    setTag(e.target.value);
+  };
+
+  const addTagClickHandler = (e) => {
+    e.preventDefault();
+    // console.log(tag);
+    if (tag !== "") {
+      setNoteDetails({ ...noteDetails, tags: [...noteDetails.tags, tag] });
+      setTag("");
+    } else {
+      alert("enter tag");
+    }
+  };
+  // console.log(noteDetails);
   return (
     <div className="form-open">
       <section
@@ -129,6 +148,31 @@ const NoteForm = () => {
             value={noteDetails.content}
             onChange={noteDetailsChangeHandler}
           ></textarea>
+
+          <div className="tags-container">
+            <input
+              type="text"
+              placeholder="tag"
+              className="user-title-input user-tag-input"
+              value={tag}
+              onChange={tagchangeHandler}
+              name="tag"
+            />
+            <button
+              className="btn btn-note"
+              onClick={(e) => addTagClickHandler(e)}
+            >
+              Add label
+            </button>
+            <div className="added-tags">
+              {noteDetails.tags.map((tag) => (
+                <h3 key={tag} className="note-tag">
+                  {tag}
+                </h3>
+              ))}
+            </div>
+          </div>
+
           <div className="tools-container">
             <div className="tools">
               <MdColorLens
@@ -136,7 +180,6 @@ const NoteForm = () => {
                 onClick={colorPalleteIconClickHandler}
               />
               <MdBarChart className="icon" onClick={priorityIconClickHandler} />
-              <FaTags className="icon" />
             </div>
 
             <button

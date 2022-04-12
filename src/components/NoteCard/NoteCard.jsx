@@ -95,6 +95,13 @@ const NoteCard = ({ note }) => {
       ) : null}
       <h2 className="note-title">{note.title}</h2>
       <p className="note-description">{note.content}</p>
+      <div className="added-tags notecard-tags">
+        {note.tags.map((tag) => (
+          <h3 key={tag} className="note-tag">
+            {tag}
+          </h3>
+        ))}
+      </div>
       <div className="note-card-footer">
         <p className="note-date">{note.createdDate}</p>
         <div className="icon-wrapper">

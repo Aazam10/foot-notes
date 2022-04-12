@@ -6,11 +6,16 @@
   padding: 1rem;
   position: relative;
   min-width: min-content;
+  padding-bottom: 0.5rem;
 }
 
 .note-card-footer {
   display: flex;
   justify-content: space-between;
+}
+
+.notecard-tags {
+  margin-bottom: 0.8rem;
 }
 
 .note-icons-container {

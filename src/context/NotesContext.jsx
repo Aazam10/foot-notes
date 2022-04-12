@@ -1,10 +1,4 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  useContext,
-  useReducer,
-} from "react";
+import { useState, createContext, useContext, useReducer } from "react";
 import { noteInitialState, noteReducer } from "../reducer";
 
 const NotesContext = createContext(null);
@@ -18,6 +12,7 @@ const NotesProvider = ({ children }) => {
     content: "",
     bgcolor: "",
     priority: "",
+    tags: [],
   };
 
   const [noteDetails, setNoteDetails] = useState(inputInitialState);
