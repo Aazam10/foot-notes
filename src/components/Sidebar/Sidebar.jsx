@@ -23,7 +23,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link className="note-list" to="/">
+          <Link className="note-list" to="/label">
             <FaTags />
             Label
           </Link>

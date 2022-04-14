@@ -1,8 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
-import { FaTags } from "react-icons/fa";
-import { Home, Login, Trash, Archive } from "./pages";
+import { Home, Login, Trash, Archive, Label } from "./pages";
 
 function App() {
   return (
@@ -13,6 +12,7 @@ function App() {
         <Route path="/mock" element={<Mockman />} />
         <Route path="/trash" element={<Trash />} />
         <Route path="/archive" element={<Archive />} />
+        <Route path="/label" element={<Label />} />
       </Routes>
     </div>
   );
