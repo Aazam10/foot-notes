@@ -6,3 +6,5 @@ export { restoreFromTrash } from "./NoteService/restoreFromTrash";
 export { addToArchive } from "./ArchiveServices/addToArchive";
 export { restoreFromArchive } from "./ArchiveServices/restoreFromArchive";
 export { addToTrashFromArchive } from "./ArchiveServices/addToTrashFromArchive";
+export { editNote } from "./NoteService/editNote";
+export { editArchiveNote } from "./ArchiveServices/editArchiveNote";

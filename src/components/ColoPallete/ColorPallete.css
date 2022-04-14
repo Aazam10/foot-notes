@@ -1,0 +1,25 @@
+:root {
+  --color-pallete-bg: #f5f5f5;
+}
+.color-pallete {
+  display: flex;
+
+  width: 8rem;
+  background-color: var(--color-pallete-bg);
+  border: 1px solid transparent;
+  border-radius: 8px;
+  height: 2rem;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  bottom: -2.5rem;
+  right: 2.5rem;
+  z-index: 2;
+}
+
+.btn-color {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
+}
