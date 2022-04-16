@@ -3,12 +3,11 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  /* height: calc(100vh - 85px);
-   */
-  height: 100%;
+  height: calc(100vh - 75px);
+
   overflow-y: auto;
   position: fixed;
-  top: 75.2px;
+  top: 73.2px;
   transition: 0.5s;
   z-index: 1;
   background-color: white;
@@ -35,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 6rem;
+  /* margin-bottom: 6rem; */
 }
 
 .avatar {
