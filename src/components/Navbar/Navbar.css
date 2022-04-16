@@ -10,10 +10,17 @@
   color: var(--notes-color);
   font-weight: 800;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navigation {
-  margin-right: 4rem;
+  margin-right: 8rem;
+}
+
+.menu-icon {
+  cursor: pointer;
 }
 
 .nav-list {
@@ -34,4 +41,10 @@
   color: var(--notes-color);
   cursor: pointer;
   font-weight: 800;
+}
+
+@media only screen and (max-width: 900px) {
+  .navigation {
+    margin-right: 3rem;
+  }
 }

@@ -1,28 +1,23 @@
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun, FaBars } from "react-icons/fa";
 import "./Navbar.css";
-import { useAuth } from "../../context";
+import { useAuth, useNotes } from "../../context";
 import { Link } from "react-router-dom";
 const Navbar = () => {
   const { authState, authDispatch } = useAuth();
   const { token } = authState;
-
+  const { toggle, setToggle } = useNotes();
+  console.log(setToggle);
   return (
     <header className="header">
-      <div className="notes-logo ">FootNotes</div>
+      <div className="notes-logo ">
+        <FaBars
+          className="menu-icon"
+          onClick={() => setToggle((prev) => !prev)}
+        />
+        FootNotes
+      </div>
       <nav className="navigation">
-        <ul className="nav-list">
-          {token ? (
-            <li className="login">Logout</li>
-          ) : (
-            <Link to="/login">
-              <li className="login">Login</li>
-            </Link>
-          )}
-
-          <li>
-            <FaMoon className="icon-style" />
-          </li>
-        </ul>
+        <FaMoon className="icon-style" />
       </nav>
     </header>
   );

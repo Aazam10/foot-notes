@@ -2,10 +2,17 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Mockman from "mockman-js";
 import { Home, Login, Trash, Archive, Label } from "./pages";
+import { Navbar, Sidebar } from "./components";
+
+import { useState } from "react";
 
 function App() {
+  const [toggle, setToggle] = useState(false);
+
   return (
     <div>
+      <Navbar toggle={toggle} setToggle={setToggle} />
+      <Sidebar toggle={toggle} setToggle={setToggle} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
