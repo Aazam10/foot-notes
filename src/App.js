@@ -10,7 +10,7 @@ function App() {
   const [toggle, setToggle] = useState(false);
 
   return (
-    <div>
+    <div className="app">
       <Navbar toggle={toggle} setToggle={setToggle} />
       <Sidebar toggle={toggle} setToggle={setToggle} />
       <Routes>

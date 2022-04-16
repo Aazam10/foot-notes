@@ -7,7 +7,7 @@
 
   overflow-y: auto;
   position: fixed;
-  top: 73.2px;
+  top: 75.2px;
   transition: 0.5s;
   z-index: 1;
   background-color: white;
@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* margin-bottom: 6rem; */
+  margin-bottom: 1.5rem;
 }
 
 .avatar {
@@ -54,4 +54,10 @@
 .note-list:hover {
   color: var(--notes-color);
   font-weight: 800;
+}
+
+@media only screen and (max-width: 900px) {
+  .notes-sidebar {
+    top: 72px;
+  }
 }
