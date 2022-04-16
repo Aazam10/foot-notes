@@ -4,7 +4,6 @@
   justify-content: space-between;
   flex-direction: column;
   height: calc(100vh - 75px);
-
   overflow-y: auto;
   position: fixed;
   top: 75.2px;
@@ -58,6 +57,9 @@
 
 @media only screen and (max-width: 900px) {
   .notes-sidebar {
-    top: 72px;
+    top: 70px;
+  }
+  .user {
+    margin-bottom: 4rem;
   }
 }
