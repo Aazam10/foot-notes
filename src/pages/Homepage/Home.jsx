@@ -9,6 +9,7 @@ const Home = () => {
     authState: { token },
   } = useAuth();
   const navigate = useNavigate();
+
   const addNotebtnHandler = () => {
     if (token) {
       setShowNoteForm(true);

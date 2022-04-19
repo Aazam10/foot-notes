@@ -1,0 +1,41 @@
+.filter-modal {
+  border: 1px solid transparent;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  width: max-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.filter-header {
+  display: flex;
+  color: white;
+  align-items: center;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  gap: 2rem;
+}
+
+.filter-title {
+  color: white;
+}
+
+.clear-filter {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.date-input {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+  color: white;
+}
+
+.date-input input {
+  height: 1rem;
+  width: 1rem;
+  margin-right: 0.5rem;
+}

@@ -1,31 +1,31 @@
 import { useNotes } from "../../context";
-import { Navbar, Sidebar, NoteForm, NoteCard } from "../../components";
+import { NoteForm, NoteCard } from "../../components";
 import "./Label.css";
 const Label = () => {
   const {
-    noteState: { notes },
+    noteState: { notes, archives },
     showNoteForm,
     toggle,
   } = useNotes();
-  console.log(notes);
+
+  const allNotes = [...notes, ...archives];
 
   const filteredLabelNotes = (label) =>
-    notes.filter((note) => note.tags.includes(label));
+    allNotes.filter((note) => note.tags.includes(label));
 
-  const labels = notes.reduce((label, note) => {
-    if (label.includes(note.tags)) {
-      return;
-    } else {
-      return [...label, ...note.tags];
-    }
+  const noteslabels = notes.reduce((label, note) => {
+    return [...label, ...note.tags];
   }, []);
-  const uniqueLabels = [...new Set(labels)];
+
+  const archiveLabels = archives.reduce((archiveLabel, archive) => {
+    return [...archiveLabel, ...archive.tags];
+  }, []);
+
+  const allLabels = [...noteslabels, ...archiveLabels];
+
+  const uniqueLabels = [...new Set(allLabels)];
 
   return (
-    // <div>
-    //   <Navbar />
-    //   <main className="main-container">
-    //     <Sidebar />
     <div
       className={`notes-main-container ${
         toggle ? "notes-container-toggle-open" : null
@@ -43,8 +43,6 @@ const Label = () => {
       ))}
       {showNoteForm && <NoteForm />}
     </div>
-    //   </main>
-    // </div>
   );
 };
 

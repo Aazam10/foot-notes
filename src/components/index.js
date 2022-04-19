@@ -5,3 +5,4 @@ export { NoteForm } from "./NoteForm/NoteForm";
 export { NoteList } from "./NoteList/NoteList";
 export { ColorPallete } from "./ColoPallete/ColorPallete";
 export { Priority } from "./Priority/Priority";
+export { FilterModal } from "./FilterModal/FilterModal";
