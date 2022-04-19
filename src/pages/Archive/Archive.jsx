@@ -1,4 +1,4 @@
-import { Navbar, Sidebar, NoteCard, NoteForm } from "../../components";
+import { NoteCard, NoteForm } from "../../components";
 import { useNotes } from "../../context";
 
 const Archive = () => {
@@ -8,10 +8,6 @@ const Archive = () => {
     toggle,
   } = useNotes();
   return (
-    // <div>
-    //   <Navbar />
-    //   <main className="main-container">
-    //     <Sidebar />
     <div
       className={`notes-main-container ${
         toggle ? "notes-container-toggle-open" : null
@@ -26,8 +22,6 @@ const Archive = () => {
       </div>
       {showNoteForm && <NoteForm />}
     </div>
-    //   </main>
-    // </div>
   );
 };
 

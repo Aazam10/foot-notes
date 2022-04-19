@@ -1,5 +1,5 @@
 import "./Home.css";
-import { Navbar, Sidebar, NoteList, NoteForm } from "../../components";
+import { NoteList, NoteForm } from "../../components";
 import { useAuth, useNotes } from "../../context";
 import { useNavigate } from "react-router-dom";
 
@@ -20,10 +20,6 @@ const Home = () => {
   };
 
   return (
-    // <div>
-    //   <Navbar />
-    //   <main className="main-container">
-    //     <Sidebar />
     <div
       className={`notes-main-container ${
         toggle ? "notes-container-toggle-open" : null
@@ -38,8 +34,6 @@ const Home = () => {
       {showNoteForm && <NoteForm />}
       <NoteList />
     </div>
-    //   </main>
-    // </div>
   );
 };
 

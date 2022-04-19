@@ -5,7 +5,6 @@ const Priority = ({ note, updateNoteHandler, setShowPriority }) => {
   const { isEditing, noteDetails, setNoteDetails } = useNotes();
 
   const setPriorityClickHandler = (priority) => {
-    // console.log(noteDetails, priority);
     if (isEditing) {
       setNoteDetails({ ...noteDetails, priority: priority });
       setShowPriority(false);

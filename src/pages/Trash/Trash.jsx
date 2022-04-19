@@ -1,11 +1,5 @@
 import { useNotes } from "../../context";
-import {
-  Navbar,
-  Sidebar,
-  NoteList,
-  NoteForm,
-  NoteCard,
-} from "../../components";
+import { NoteCard } from "../../components";
 
 const Trash = () => {
   const {
@@ -13,10 +7,6 @@ const Trash = () => {
     toggle,
   } = useNotes();
   return (
-    // <div>
-    //   <Navbar />
-    //   <main className="main-container">
-    //     <Sidebar />
     <div
       className={`notes-main-container ${
         toggle ? "notes-container-toggle-open" : null
@@ -28,8 +18,6 @@ const Trash = () => {
         })}
       </div>
     </div>
-    //   </main>
-    // </div>
   );
 };
 

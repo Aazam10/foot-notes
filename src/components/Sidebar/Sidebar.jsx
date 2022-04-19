@@ -13,8 +13,7 @@ const Sidebar = () => {
     noteState: { notes, archives, trash },
     toggle,
   } = useNotes();
-  // console.log("notes", notes, "archives", archives, "trash", trash);
-  // console.log(toggle);
+
   return (
     <aside className={`notes-sidebar ${toggle ? "sidebar-visible" : null}`}>
       <ul className="list">
