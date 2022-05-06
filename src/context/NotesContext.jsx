@@ -17,6 +17,7 @@ const NotesProvider = ({ children }) => {
 
   const [noteDetails, setNoteDetails] = useState(inputInitialState);
   const [isEditing, setIsEditing] = useState(false);
+  const [toggle, setToggle] = useState(false);
 
   return (
     <NotesContext.Provider
@@ -30,6 +31,8 @@ const NotesProvider = ({ children }) => {
         inputInitialState,
         isEditing,
         setIsEditing,
+        toggle,
+        setToggle,
       }}
     >
       {children}

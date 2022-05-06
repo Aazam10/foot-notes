@@ -1,7 +1,7 @@
 .note-card {
   border-radius: 8px;
   background-color: var(--notes-color);
-  width: 40%;
+  width: fit-content;
   border: 1px transparent;
   padding: 1rem;
   position: relative;

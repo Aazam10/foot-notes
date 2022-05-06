@@ -1,10 +1,20 @@
 .notes-sidebar {
-  padding-left: 2rem;
-  width: 17rem;
+  width: 0rem;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  height: calc(100vh - 85px);
+  height: calc(100vh - 75px);
+  overflow-y: auto;
+  position: fixed;
+  top: 75.2px;
+  transition: 0.5s;
+  z-index: 1;
+  background-color: white;
+}
+
+.sidebar-visible {
+  padding-left: 2rem;
+  width: 17rem;
 }
 
 .list li {
@@ -22,7 +32,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .avatar {
@@ -42,4 +52,13 @@
 .note-list:hover {
   color: var(--notes-color);
   font-weight: 800;
+}
+
+@media only screen and (max-width: 900px) {
+  .notes-sidebar {
+    top: 70px;
+  }
+  .user {
+    margin-bottom: 4rem;
+  }
 }

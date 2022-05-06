@@ -24,7 +24,6 @@ const NoteForm = () => {
 
   const { token } = authState;
 
-  // const [noteDetails, setNoteDetails] = useState({ title: "", content: "" });
   const [showColorPallete, setShowColorPallete] = useState(false);
   const [showPriority, setShowPriority] = useState(false);
 
@@ -97,7 +96,6 @@ const NoteForm = () => {
         closeNoteForm();
       }
     }
-    // closeNoteForm();
   };
   const priorityIconClickHandler = () => {
     setShowColorPallete(false);
@@ -116,7 +114,6 @@ const NoteForm = () => {
 
   const addTagClickHandler = (e) => {
     e.preventDefault();
-    // console.log(tag);
     if (tag !== "") {
       setNoteDetails({ ...noteDetails, tags: [...noteDetails.tags, tag] });
       setTag("");
@@ -124,7 +121,6 @@ const NoteForm = () => {
       alert("enter tag");
     }
   };
-  // console.log(noteDetails);
   return (
     <div className="form-open">
       <section

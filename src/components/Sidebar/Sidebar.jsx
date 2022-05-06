@@ -11,10 +11,11 @@ import { useNotes } from "../../context";
 const Sidebar = () => {
   const {
     noteState: { notes, archives, trash },
+    toggle,
   } = useNotes();
-  // console.log("notes", notes, "archives", archives, "trash", trash);
+
   return (
-    <aside className="notes-sidebar">
+    <aside className={`notes-sidebar ${toggle ? "sidebar-visible" : null}`}>
       <ul className="list">
         <li>
           <Link className="note-list" to="/">
@@ -23,7 +24,7 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link className="note-list" to="/">
+          <Link className="note-list" to="/label">
             <FaTags />
             Label
           </Link>

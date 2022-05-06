@@ -4,16 +4,32 @@
 
 .header {
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 10;
 }
 
 .notes-logo {
   color: var(--notes-color);
   font-weight: 800;
   font-size: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navigation {
-  margin-right: 4rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 12rem;
+  position: relative;
+}
+
+.menu-icon {
+  cursor: pointer;
 }
 
 .nav-list {
@@ -29,9 +45,20 @@
   align-self: center;
 }
 
+.icon-lg {
+  font-size: 2.5rem;
+}
+
 .login:hover,
 .icon-style:hover {
   color: var(--notes-color);
   cursor: pointer;
   font-weight: 800;
+}
+
+@media only screen and (max-width: 900px) {
+  .navigation {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }

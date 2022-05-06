@@ -1,12 +1,16 @@
-.main-container {
+/* .main-container {
   display: flex;
   gap: 1rem;
-}
+} */
 
 .notes-main-container {
-  width: 100%;
   height: calc(100vh - 85px);
   overflow-y: scroll;
+}
+
+.notes-container-toggle-open {
+  margin-left: 17rem;
+  transition: margin-left 0.5s;
 }
 
 .notes-card-container {
@@ -14,6 +18,7 @@
   gap: 1.5rem;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .btn-container {
@@ -25,4 +30,13 @@
   background-color: var(--notes-color);
   font-size: 1.5rem;
   font-weight: 600;
+}
+
+.app {
+  max-height: 100%;
+}
+@media only screen and (max-width: 900px) {
+  .notes-container-toggle-open {
+    margin-left: 0;
+  }
 }
